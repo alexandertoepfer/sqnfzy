@@ -74,10 +74,11 @@ main ()
 }
 ```
   
-Result
+# Results
+From two different score matrices multiple other approximate matches could be found even though they are scoring below half of the perfect score.
 ```c
-                          (DISPARITY MATRIX)
-               Gaps have less penalty than mismatches
+                        (DISPARITY MATRIX)
+              Gaps have less penalty than mismatches
     
          [1 ... ATGGCTAGCATGACTGGTGGACAGCAAATGGGT ... 33)
       [1509 ... ATGGCTAGCATGACTGGTGGACAGCAAATGGGT ... 1541)
