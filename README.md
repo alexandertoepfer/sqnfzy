@@ -31,7 +31,7 @@ for (sqn::Match<Dna5Sequence>& m : query.search ())
 {
   std::string needle = m.needle ();
   std::string haystack = m.haystack ();
-  //std::string score = m.score ();
+  std::string score = m.score ();
 }
 ```
 
