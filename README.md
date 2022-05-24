@@ -9,6 +9,4 @@ Inspired by [University of Alberta, Paul Stothard's Sequence Manipulation Suite]
 # Usage
 
 Initialization of sequences from string can be accomplished by assignment to a Sequence<Tp> instance with the given DNA or RNA sequence type.
-<code>
-  <span style="color:blue">sqn::<span style="color:blue">Sequence</span>Dna5 genome = "ACATTTGAAA";</span>
-</code>
+
