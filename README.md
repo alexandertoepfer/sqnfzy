@@ -25,7 +25,7 @@ sqn::ScoreMatrix scores = { /* Match */ 1, /* Mismatch */ -1, /* Gap */ 2 };
 query.initializeScoreMatrix(scores, /* Amount of matches */ 3);
 ```
 
-For execution of the query and collection of results it is generally to wrap everything into a loop, as std::list<Match<Tp>>& **search** () will return a list of all approximate matches.
+For execution of the query and collection of results it is generally recommended to wrap everything into a loop, as std::list<Match<Tp>>& **search** () will return a list of all approximate matches.
 ```c
 for (sqn::Match<Dna5Sequence>& m : query.search ())
 {
