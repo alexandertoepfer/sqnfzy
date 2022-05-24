@@ -25,6 +25,16 @@ sqn::ScoreMatrix scores = { /* Match */ 1, /* Mismatch */ -1, /* Gap */ 2 };
 query.initializeScoreMatrix(scores, /* Amount of matches */ 3);
 ```
 
+Execution of the query and collection of results.
+```c
+for (sqn::Match<Dna5Sequence>& m : query.search ())
+{
+  std::string needle = m.needle ();
+  std::string haystack = m.haystack ();
+  //std::string score = m.score ();
+}
+```
+
 # Example
   
 Code
