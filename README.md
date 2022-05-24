@@ -1,3 +1,3 @@
-<img src="sqnfzy-logo.png" width="300">
+<img src="sqnfzy-logo.png">
 
 # Analysis of DNA Sequences - SqnFzy
