@@ -18,3 +18,7 @@ Initialization of the fuzzy query with genome (haystack) and enzyme (needle) acc
 ```c
 sqn::FuzzyQuery<Dna5Sequence> query = { randGenome, enzymeEagI };
 ```
+
+# Example
+  
+Code
