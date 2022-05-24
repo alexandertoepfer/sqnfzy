@@ -70,7 +70,7 @@ main ()
 # Results
 From two different score matrices besides the obvious first match multiple other approximate matches could be found even though they are scoring below half of the perfect score.
 ```c
-                        (DISPARITY MATRIX)
+                       (DISPARITY MATRIX)
               Gaps have less penalty than mismatches
     
          [1 ... ATGGCTAGCATGACTGGTGGACAGCAAATGGGT ... 33)
