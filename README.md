@@ -8,7 +8,7 @@ Inspired by [University of Alberta, Paul Stothard's Sequence Manipulation Suite]
 
 # Usage
 
-Initialization of sequences from string can be accomplished by assignment to a Sequence<Tp> instance with the given DNA or RNA sequence type.
+Initialization of sequences from string can be accomplished by assignment to a sequence instance with the given DNA or RNA sequence type.
 ```c
 sqn::Sequence<Dna5> randGenome = "CTTTACAGGCCCCGGTTTCT";
 sqn::Sequence<Dna5> enzymeEagI = "CGGCCG";
@@ -19,13 +19,13 @@ Initialization of the fuzzy query with genome (haystack) and enzyme (needle) acc
 sqn::FuzzyQuery<Dna5Sequence> query = { randGenome, enzymeEagI };
 ```
 
-Configuration of the query matrix used to calculate scores for sequence parts. 
+Configuration of the scores used to calculate values for sequence parts can be done by setting a score matrix.
 ```c
 sqn::ScoreMatrix scores = { /* Match */ 1, /* Mismatch */ -1, /* Gap */ 2 };
 query.initializeScoreMatrix(scores, /* Amount of matches */ 3);
 ```
 
-Execution of the query and collection of results.
+For execution of the query and collection of results it is generally to wrap everything into a loop, as std::list<Match<Tp>>& **search** () will return a list of all approximate matches.
 ```c
 for (sqn::Match<Dna5Sequence>& m : query.search ())
 {
@@ -35,7 +35,7 @@ for (sqn::Match<Dna5Sequence>& m : query.search ())
 }
 ```
 
-> **Note:** For custom string formats define std::string **itemParse** (sqn::Item<Tp>& item) and pass it to the query
+> **Note:** For custom string formats of matches define std::string **itemParse** (sqn::Item<Tp>& item) and pass it as function pointer to the query.
 
 # Example
 
