@@ -19,7 +19,7 @@ Initialization of the fuzzy query with genome (haystack) and enzyme (needle) acc
 sqn::FuzzyQuery<Dna5Sequence> query = { randGenome, enzymeEagI };
 ```
 
-Configuration of the scores used to calculate values for sequence parts can be done by setting a score matrix.
+Configuration of the values used to calculate scores for sequence parts can be done by setting a score matrix that dictates rewards and penalties.
 ```c
 sqn::ScoreMatrix scores = { /* Match */ 1, /* Mismatch */ -1, /* Gap */ 2 };
 query.initializeScoreMatrix(scores, /* Amount of matches */ 3);
