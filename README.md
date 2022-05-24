@@ -4,7 +4,12 @@
 
 # Analysis of DNA Sequences
 
-Inspired by [University of Alberta, Paul Stothard's Sequence Manipulation Suite](https://www.bioinformatics.org/sms2/index.html), a small bioinformatics library written in C++ to approximately find parts of DNA sequences that can be easily mutated into a useful restriction site. Currently this project is not open source.
+Inspired by [University of Alberta, Paul Stothard's Sequence Manipulation Suite](https://www.bioinformatics.org/sms2/index.html) and [Seqan3](https://github.com/seqan/seqan3) a small bioinformatics library written in C++ to approximately find parts of DNA sequences that can be easily mutated into a useful restriction site. Currently this project is not open source.
 
 # Usage
 
+```c
+#include "SqnFzy.hpp"
+
+sqn::Sequence<Dna5> genome = "ACATTTGAAA";
+```
