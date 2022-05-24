@@ -35,6 +35,8 @@ for (sqn::Match<Dna5Sequence>& m : query.search ())
 }
 ```
 
+> **Note:** For custom string formats define std::string itemParse (sqn::Item<Tp>& item) 
+
 # Example
   
 Code
