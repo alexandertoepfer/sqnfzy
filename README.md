@@ -47,12 +47,6 @@ itemParse (sqn::Item<Dna5Sequence>& item)
   ...
 }
 
-std::string
-center (std::string str, int width)
-{
-  ...
-}
-
 int
 main ()
 {
@@ -67,8 +61,7 @@ main ()
   {
     std::cout << m.needle () << std::endl;
     std::cout << m.haystack () << std::endl;
-    std::cout << center (m.score (), m.haystack ().length ())
-      << std::endl << std::endl;
+    std::cout << m.score () << std::endl << std::endl;
   }
   return 0;
 }
