@@ -1,2 +1,2 @@
-![Logo](sqnfzy-logo.png | width=100)
+![Logo](sqnfzy-logo.png)
 # Analysis of DNA Sequences - SqnFzy
