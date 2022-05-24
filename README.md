@@ -13,3 +13,8 @@ Initialization of sequences from string can be accomplished by assignment to a S
 sqn::Sequence<Dna5> randGenome = "CTTTACAGGCCCCGGTTTCT";
 sqn::Sequence<Dna5> enzymeEagI = "CGGCCG";
 ```
+
+Initialization of the fuzzy query with genome (haystack) and enzyme (needle) according to their DNA or RNA sequence type.
+```c
+sqn::FuzzyQuery<Dna5Sequence> query = { randGenome, enzymeEagI };
+```
