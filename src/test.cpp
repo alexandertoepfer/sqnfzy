@@ -18,10 +18,10 @@
 std::string
 readFile (const char* fileName)
 {
-    std::ifstream t(fileName);
+    std::ifstream t (fileName);
     std::stringstream buffer;
-    buffer << t.rdbuf();
-    return buffer.str();
+    buffer << t.rdbuf ();
+    return buffer.str ();
 }
 
 /**
@@ -37,9 +37,9 @@ std::string
 itemParse (sqn::Item<Tp>& item)
 {
     std::stringstream sout;
-    sout << std::right << std::setw (5) << "[" + std::to_string(item._start) << " ... ";
+    sout << std::right << std::setw (5) << "[" + std::to_string (item._start) << " ... ";
     sout << item._sequence.toString ();
-    sout << " ... " << std::left << std::setw (5) << std::to_string(item._end) + ")";
+    sout << " ... " << std::left << std::setw (5) << std::to_string (item._end) + ")";
     return sout.str ();
 }
 
