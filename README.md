@@ -6,7 +6,7 @@
 
 Inspired by [University of Alberta, Paul Stothard's Sequence Manipulation Suite](https://www.bioinformatics.org/sms2/index.html) and [Seqan3](https://github.com/seqan/seqan3) a small bioinformatics library written in C++ to approximately find parts of DNA sequences that can be easily mutated into a useful restriction site.
 
-> **Note:** Currently this project is not open source. Read out to me in case you want to contribute or make use of this algorithm: **alexander_toepfer@gmx.de**
+> **Note:** Currently this project is not open source. Read out to me directly in case you want to contribute or make use of this library: **alexander_toepfer@gmx.de**
 
 # Usage
 
