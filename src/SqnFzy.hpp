@@ -145,13 +145,20 @@ namespace sqn
       public:
         Sequence ()
             : _begin (nullptr), _end (nullptr), _size (0) {}
+        
+        Sequence (const Sequence<Tp>& other);
+        
         Sequence (const char* other);
 
         Sequence (std::string other);
 
-        Sequence (const Sequence<Tp>& other);
-
-
+        /**
+         * operator+=
+         *
+         * @brief
+         * Append to the current sequence.
+         * @param summand The element or sequence to append.
+         */
         Sequence<Tp>&
         operator+= (const char* summand);
 
@@ -159,11 +166,23 @@ namespace sqn
         Sequence<Tp>&
         operator+= (Ts summand);
 
-
+        /**
+         * operator[]
+         *
+         * @brief
+         * Access the current sequence element at a specified index.
+         * @param index The position in the sequence.
+         */
         Tp&
         operator[] (size_t index);
 
-
+        /**
+         * begin(), end()
+         *
+         * @brief
+         * Retrieve an iterator pointing to the begin or end of the sequence.
+         * @return The SequenceIterator with that position.
+         */
         SequenceIterator<Tp>
         begin ();
 
