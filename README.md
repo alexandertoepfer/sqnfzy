@@ -2,7 +2,7 @@
   <img src="sqnfzy-logo-300.png" width="350">
 </p>
 
-# SqnFzy - Fuzzy Analysis of DNA Sequences
+# SqnFzy0.1 - Fuzzy Analysis of DNA Sequences
 
 Inspired by [University of Alberta, Paul Stothard's Work](https://www.bioinformatics.org/sms2/index.html) and [Seqan3](https://github.com/seqan/seqan3) a small bioinformatics library written in C++ to approximately find parts of DNA sequences that can be easily mutated into a useful restriction site.
 
