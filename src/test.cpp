@@ -7,6 +7,14 @@
 
 #include "SqnFzy.hpp"
 
+/**
+ * readFile
+ *
+ * @brief
+ * Read complete file contents into a string.
+ * @param fileName Name of the file in current working directory.
+ * @return The file contents as single string.
+ */
 std::string
 readFile (const char* fileName)
 {
@@ -16,6 +24,14 @@ readFile (const char* fileName)
     return buffer.str();
 }
 
+/**
+ * itemParse
+ *
+ * @brief
+ * Parse a single item from a match as string.
+ * @param item The item referring to a part of the sequence.
+ * @return The formatted string.
+ */
 template<typename Tp>
 std::string
 itemParse (sqn::Item<Tp>& item)
@@ -27,6 +43,15 @@ itemParse (sqn::Item<Tp>& item)
     return sout.str ();
 }
 
+/**
+ * center
+ *
+ * @brief
+ * Center a string before passing it to print.
+ * @param str The string to be centered.
+ * @param width The total width used to calculate center.
+ * @return The centered string.
+ */
 std::string
 center (std::string str, int width)
 {
