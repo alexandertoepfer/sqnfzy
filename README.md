@@ -43,6 +43,8 @@ for (sqn::Match<Dna5Sequence>& m : query.search ())
 
 Using the functionality provided by the library to find possible common plasmid features like T7 in adeno-associated virus sequences allowing for errors and gaps caused by mutations. Take a look at <code>example.cpp</code> for the complete code. Sequence used in this example [Addgene #107790-AAV9](https://www.addgene.org/browse/sequence/204876/)
 ```c
+#include "SqnFzy.hpp"
+  
 std::string
 itemParse (sqn::Item<Dna5Sequence>& item)
 {
