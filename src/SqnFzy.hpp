@@ -72,6 +72,13 @@ namespace sqn
         SequenceIterator (SequenceNodeBase<Tp>* position)
             : _current (position) {};
 
+        /**
+         * operator==, operator!=
+         *
+         * @brief
+         * Comparing whether iterators are pointing to the same element.
+         * @param other The second iterator for comparison.
+         */
         bool
         operator== (SequenceIterator<Tp> other) const;
 
@@ -91,7 +98,13 @@ namespace sqn
         SequenceIterator<Tp>
         operator- (unsigned int subtrahend);
 
-
+        /**
+         * operator++, operator--
+         *
+         * @brief
+         * Iterate an iterator forward or backward, this would be equal to either
+         * operator+(1) or operator-(1) depending on prefix or postfix.
+         */
         SequenceIterator<Tp>&
         operator++ ();
 
@@ -104,7 +117,12 @@ namespace sqn
         SequenceIterator<Tp>
         operator-- (int);
 
-
+        /**
+         * operator*, operator->
+         *
+         * @brief
+         * Dereference the current iterator and access the node element.
+         */
         Tp&
         operator* () const;
 
