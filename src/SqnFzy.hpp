@@ -239,7 +239,12 @@ namespace sqn
         getNucleotides (const size_t& key,
                         const TValue& value);
 
-
+        /**
+         * operator=
+         *
+         * @brief
+         * Assign a value with specification restriction.
+         */
         template <typename T>
         inline SimpleType&
         operator= (T const& other);
@@ -290,12 +295,32 @@ namespace sqn
                size_t startHaystack, size_t endHaystack,
                std::string (*parser)(Item<Tp>&));
 
+        /**
+         * haystack()
+         *
+         * @brief
+         * Get part of the haystack sequence that was matched with the needle.
+         * @return String representation of the match.
+         */
         std::string
         haystack ();
 
+        /**
+         * needle()
+         *
+         * @brief
+         * Get part of the needle sequence that was matched with the haystack.
+         * @return String representation of the match.
+         */
         std::string
         needle ();
 
+        /**
+         * score()
+         *
+         * @brief
+         * Get the calculated score for the match.
+         */
         std::string
         score();
 
@@ -320,9 +345,16 @@ namespace sqn
 
         ScoreMatrix (int match, int mismatch, int gap);
 
+        /**
+         * getScore()
+         *
+         * @brief
+         * Calculate the score for two characters from the haystack and needle.
+         * @param r1 Character from haystack.
+         * @param r2 Character from needle.
+         */
         int
         getScore (char r1, char r2);
-
 
         int _match;
         int _mismatch;
