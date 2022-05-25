@@ -416,15 +416,32 @@ namespace sqn
         void
         initializeScoreMatrix (ScoreMatrix scoreSet, int amount);
 
-
+        /**
+         * initializeMatrix()
+         *
+         * @brief
+         * Span the matrix of haystack*needle dimensions and set undefined states.
+         * @param haystackSequence The complete genome to be searched.
+         * @param needleSequence The needle sequence to be approximately searched.
+         */
         void
         initializeMatrix (Tp haystackSequence, Tp needleSequence);
 
-
+        /**
+         * updateMatrix()
+         *
+         * @brief
+         * Update all nodes in the matrix.
+         */
         void
         updateMatrix ();
 
-
+        /**
+         * search()
+         *
+         * @brief
+         * Get aligned haystack sequence and needle sequence matches according to amount.
+         */
         std::list<Match<Tp>>&
         search ();
 
