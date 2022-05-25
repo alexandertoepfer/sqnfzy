@@ -395,11 +395,24 @@ namespace sqn
       public:
         FuzzyQuery(Tp haystackSequence, Tp needleSequence);
 
-
+        /**
+         * setItemParser()
+         *
+         * @brief
+         * Set parser for a single item from a match.
+         * @param parser The function used for parsing part of a sequence with start and end.
+         */
         void
         setItemParser(std::string (*parser)(Item<Tp>&));
 
-
+        /**
+         * initializeScoreMatrix()
+         *
+         * @brief
+         * Set rewards and penalties for score calculation as well as amounts.
+         * @param scoreSet The values used to calculate scores for sequence parts.
+         * @param amount The amount of matches to be retrieved.
+         */
         void
         initializeScoreMatrix (ScoreMatrix scoreSet, int amount);
 
@@ -426,7 +439,7 @@ namespace sqn
         std::string (*_parser)(Item<Tp>&);
     };
 
-    //ScoreMatrix continuityMatrix { 1, 0, 2 }, disparityMatrix { 1, -1, 0 }, mixedMatrix { 1, -1, 1 };
+    ScoreMatrix continuityMatrix { 1, 0, 2 }, disparityMatrix { 1, -1, 0 }, mixedMatrix { 1, -1, 1 };
 }
 
 typedef sqn::SimpleType<unsigned char, sqn::Dna5Specification> Dna5;
