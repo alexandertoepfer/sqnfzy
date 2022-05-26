@@ -93,8 +93,8 @@ From two different score matrices besides the obvious first match multiple other
        [603 ... T-GCT-GC-TCAGTGGT-GACAG-ATAGGGGT ... 629)
                             Score 14
     
-      [1 ... AT-G-GCT--A--GCAT-GAC-T---GGTGGACAGCAA-AT ... 29)
-   [2316 ... ATCGAGCTGAAGGGCATCGACTTCAAGGAGGACGGCAACAT ... 2356)
+     [1 ... AT-G-GCT--A--GCAT-GAC-T---GGTGGACAGCAA-AT ... 29)
+  [2316 ... ATCGAGCTGAAGGGCATCGACTTCAAGGAGGACGGCAACAT ... 2356)
                             Score 13
      
 
