@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sqnfzy-logo-300.png" width="350">
+  <img src="sqnfzy-logo.png" width="350">
 </p>
 
 # SqnFzy0.1 - Fuzzy Analysis of DNA Sequences
