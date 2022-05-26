@@ -393,7 +393,7 @@ namespace sqn
     class FuzzyQuery
     {
       public:
-        FuzzyQuery(Tp haystackSequence, Tp needleSequence);
+        FuzzyQuery (Tp haystackSequence, Tp needleSequence);
 
         /**
          * setItemParser()
@@ -403,7 +403,7 @@ namespace sqn
          * @param parser The function used for parsing part of a sequence with start and end.
          */
         void
-        setItemParser(std::string (*parser)(Item<Tp>&));
+        setItemParser (std::string (*parser) (Item<Tp>&));
 
         /**
          * initializeScoreMatrix()
