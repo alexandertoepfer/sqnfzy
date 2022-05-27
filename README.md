@@ -33,10 +33,10 @@ for (sqn::Match<Dna5Sequence>& m : query.search ())
 {
   std::string needle = m.needle ();
   std::string haystack = m.haystack ();
-  std::string score = m.score ();
 }
 ```
 
+The score of the match can be obtained as well, which is shown in the complete example but shall be left out here. 
 > **Note:** For custom string formats of matches define std::string **itemParse** (sqn::Item<Tp>& item) and pass it as function pointer to the query.
 
 # Example
