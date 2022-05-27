@@ -18,17 +18,16 @@
 std::string
 readFasta (const char* fileName)
 {
-    std::ifstream t (fileName);
+    std::ifstream file (fileName);
     std::stringstream buffer;
-    std::string::size_type i = 0;
+    std::string::size_type index = 0;
     std::string line;
-    getline( t, line );
-    for( std::string line; getline( t, line ); )
+    getline (file, line);
+    for (std::string line; getline (file, line);)
     {
-        i = line.find('\n', i);
-        if (i != std::string::npos) {
-            line.erase(i);
-        }
+        index = line.find('\n', index);
+        if (index != std::string::npos)
+            line.erase(index);
         buffer << line;
     }
     return buffer.str ();
