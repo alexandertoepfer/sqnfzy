@@ -131,7 +131,7 @@ Results for auto correction of words with a given dictionary as follows.
                          (MIXED MATRIX)
            Mismatches and Gaps have similar penalties
                    
-                     stwd-nt from 1 to 6
+                      stwd-nt from 1 to 6
                       student from 1 to 7
                             Score 3
 ```
