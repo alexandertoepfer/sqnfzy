@@ -128,7 +128,7 @@ From two different score matrices besides the obvious first match multiple other
 
 Results for auto correction of words with a given dictionary as follows.
 ```c
-                         (MIXED MATRIX)
+                        (MIXED MATRIX)
            Mismatches and gaps have similar penalties
                    
                       stwd-nt from 1 to 6
