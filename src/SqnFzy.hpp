@@ -17,8 +17,8 @@ namespace sqn
     template <class T, class U>
     concept DerivedFrom = std::is_base_of<U, T>::value;
 
-    template <class T, class U>
-    concept AssignableTo = std::is_assignable<T, U>::value;
+    template <class U, class T>
+    concept AssignableTo = std::is_assignable<T&, U>::value;
 
     /**
      * SequencePointerBase
