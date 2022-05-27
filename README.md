@@ -63,9 +63,7 @@ main ()
   
   for (sqn::Match<Dna5Sequence>& m : analysis.search ())
   {
-    std::cout << m.needle () << std::endl;
-    std::cout << m.haystack () << std::endl;
-    std::cout << m.score () << std::endl << std::endl;
+    ...
   }
   return 0;
 }
@@ -81,14 +79,12 @@ main ()
   sqn::Sequence<char> words = "student,summer,school,system,sample";
   sqn::Sequence<char> word = "stwdnn";
   
-  sqn::FuzzyQuery<sqn::Sequence<char>> analysis = { words, word };
-  analysis.initializeScoreMatrix (sqn::mixedMatrix, 1);
+  sqn::FuzzyQuery<sqn::Sequence<char>> autocorrect = { words, word };
+  autocorrect.initializeScoreMatrix (sqn::mixedMatrix, 1);
   
-  for (sqn::Match<Dna5Sequence>& m : analysis.search ())
+  for (sqn::Match<sqn::Sequence<char>>& m : autocorrect.search ())
   {
-    std::cout << m.needle () << std::endl;
-    std::cout << m.haystack () << std::endl;
-    std::cout << m.score () << std::endl << std::endl;
+    ...
   }
   return 0;
 }
