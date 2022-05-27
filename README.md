@@ -129,7 +129,7 @@ From two different score matrices besides the obvious first match multiple other
 Results for auto correction of words with a given dictionary as follows.
 ```c
                          (MIXED MATRIX)
-           Mismatches and Gaps have similar penalties
+           Mismatches and gaps have similar penalties
                    
                       stwd-nt from 1 to 6
                       student from 1 to 7
