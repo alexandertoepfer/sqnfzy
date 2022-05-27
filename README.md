@@ -54,7 +54,7 @@ itemParse (sqn::Item<Dna5Sequence>& item)
 int
 main ()
 {
-  sqn::Sequence<Dna5> genome (readFile ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta"));
+  sqn::Sequence<Dna5> genome (readFasta ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta"));
   sqn::Sequence<Dna5> t7tag = "atggctagcatgactggtggacagcaaatgggt";
   
   sqn::FuzzyQuery<Dna5Sequence> analysis = { genome, t7tag };
