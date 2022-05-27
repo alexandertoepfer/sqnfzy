@@ -8,7 +8,7 @@
 #include "SqnFzy.hpp"
 
 /**
- * readFile
+ * readFasta
  *
  * @brief
  * Read complete file contents into a string.
@@ -16,11 +16,21 @@
  * @return The file contents as single string.
  */
 std::string
-readFile (const char* fileName)
+readFasta (const char* fileName)
 {
     std::ifstream t (fileName);
     std::stringstream buffer;
-    buffer << t.rdbuf ();
+    std::string::size_type i = 0;
+    std::string line;
+    getline( t, line );
+    for( std::string line; getline( t, line ); )
+    {
+        i = line.find('\n', i);
+        if (i != std::string::npos) {
+            line.erase(i);
+        }
+        buffer << line;
+    }
     return buffer.str ();
 }
 
@@ -68,7 +78,7 @@ main ()
     sqn::Sequence<Dna5> t7tag = "atggctagcatgactggtggacagcaaatgggt";
     sqn::FuzzyQuery<Dna5Sequence> analysis = { genome, t7tag };
     
-    analysis.initializeScoreMatrix (sqn::continuityMatrix, 3);
+    analysis.initializeScoreMatrix (sqn::continuityMatrix, 5);
     analysis.setItemParser (itemParse);
     
     for (sqn::Match<Dna5Sequence>& m : analysis.search ())
