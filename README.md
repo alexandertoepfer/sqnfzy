@@ -88,14 +88,6 @@ From two different score matrices besides the obvious first match multiple other
        [1 ... ATGGCTAGCATGACTGGTGGA--CA-GCAA--ATGG ... 31)
     [5579 ... AT--CTA-CACGAC-GG-GGAGTCAGGCAACTATGG ... 5609)
                             Score 14
-    
-         [2 ... TGGCTAGCATGACTGGTGGACAGCAAATGGGT ... 33)
-       [603 ... T-GCT-GC-TCAGTGGT-GACAG-ATAGGGGT ... 629)
-                            Score 14
-    
-     [1 ... AT-G-GCT--A--GCAT-GAC-T---GGTGGACAGCAA-AT ... 29)
-  [2316 ... ATCGAGCTGAAGGGCATCGACTTCAAGGAGGACGGCAACAT ... 2356)
-                            Score 13
      
 
                        (CONTINUITY MATRIX)
