@@ -70,6 +70,29 @@ main ()
   return 0;
 }
 ```
+
+Using the functionality provided by the library to auto correct text based on a dictionary of known words, currently not officially supported but another interesting use case for this algorithm.
+```c
+#include "SqnFzy.hpp"
+
+int
+main ()
+{
+  sqn::Sequence<char> words = "student,summer,school,system,sample";
+  sqn::Sequence<char> word = "stwdnn";
+  
+  sqn::FuzzyQuery<sqn::Sequence<char>> analysis = { words, word };
+  analysis.initializeScoreMatrix (sqn::mixedMatrix, 1);
+  
+  for (sqn::Match<Dna5Sequence>& m : analysis.search ())
+  {
+    std::cout << m.needle () << std::endl;
+    std::cout << m.haystack () << std::endl;
+    std::cout << m.score () << std::endl << std::endl;
+  }
+  return 0;
+}
+```
   
 # Results
 From two different score matrices besides the obvious first match multiple other approximate matches could be found even though they are scoring below half of the perfect score.
@@ -105,4 +128,13 @@ From two different score matrices besides the obvious first match multiple other
       [3170 ... CTGCCTTGCCCG-CTGCTGGACAGGGGCTCGG ... 3200)
                             Score 18
      
+```
+
+Results for auto correction of words with a given dictionary as follows.
+```c
+                        (MIXED MATRIX)
+          Mismatches and Gaps have similar penalties
+                      stwd-nt from 1 to 6
+                      student from 1 to 7
+                            Score 3
 ```
