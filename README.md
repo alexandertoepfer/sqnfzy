@@ -80,7 +80,7 @@ main ()
   sqn::Sequence<char> word = "stwdnn";
   
   sqn::FuzzyQuery<sqn::Sequence<char>> autocorrect = { words, word };
-  autocorrect.initializeScoreMatrix (sqn::mixedMatrix, 1);
+  autocorrect.initializeScoreMatrix (sqn::standardMatrix, 1);
   
   for (sqn::Match<sqn::Sequence<char>>& m : autocorrect.search ())
   {
@@ -128,7 +128,7 @@ From two different score matrices besides the obvious first match multiple other
 
 Results for auto correction of text with a given dictionary as follows.
 ```c
-                        (MIXED MATRIX)
+                       (STANDARD MATRIX)
            Mismatches and gaps have similar penalties
                    
                       stwd-nt from 1 to 6
