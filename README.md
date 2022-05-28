@@ -126,7 +126,7 @@ From two different score matrices besides the obvious first match multiple other
      
 ```
 
-Results for auto correction of words with a given dictionary as follows.
+Results for auto correction of text with a given dictionary as follows.
 ```c
                         (MIXED MATRIX)
            Mismatches and gaps have similar penalties
