@@ -77,7 +77,7 @@ int
 main ()
 {
   sqn::Sequence<char> words = "student,summer,school,system,sample";
-  sqn::Sequence<char> word = "stwdnn";
+  sqn::Sequence<char> word = "stwdnt";
   
   sqn::FuzzyQuery<sqn::Sequence<char>> autocorrect = { words, word };
   autocorrect.initializeScoreMatrix (sqn::standardMatrix, 1);
