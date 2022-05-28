@@ -456,7 +456,7 @@ namespace sqn
         std::string (*_parser)(Item<Tp>&);
     };
 
-    ScoreMatrix continuityMatrix { 1, 0, 2 }, disparityMatrix { 1, -1, 0 }, mixedMatrix { 1, -1, 1 };
+    ScoreMatrix continuityMatrix { 1, 0, 2 }, disparityMatrix { 1, -1, 0 }, standardMatrix { 1, -1, 1 };
 }
 
 typedef sqn::SimpleType<unsigned char, sqn::Dna5Specification> Dna5;
