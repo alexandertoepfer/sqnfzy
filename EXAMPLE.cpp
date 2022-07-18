@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
+#include <vector>
 
-#include "SqnFzy.hpp"
+#include <sqnmanip/sqn/fzy.hpp>
 
 /**
  * readFasta
@@ -21,10 +22,9 @@ readFasta (const char* fileName)
     std::ifstream file (fileName);
     std::stringstream buffer;
     std::string::size_type index = 0;
-    std::string line;
-    getline (file, line);
     for (std::string line; getline (file, line);)
     {
+        /* TODO: Fix Fasta EOF bug -> Ticket for Genbank format */
         index = line.find('\n', index);
         if (index != std::string::npos)
             line.erase(index);
@@ -53,7 +53,7 @@ itemParse (sqn::Item<Tp>& item)
 }
 
 /**
- * center
+ * helper_center
  *
  * @brief
  * Center a string before passing it to print.
@@ -62,7 +62,7 @@ itemParse (sqn::Item<Tp>& item)
  * @return The centered string.
  */
 std::string
-center (std::string str, int width)
+helper_center (std::string str, int width)
 {
     std::string result;
     for (int i = 0; i < (width / 2) - (str.length() / 2); ++i)
@@ -73,18 +73,19 @@ center (std::string str, int width)
 int
 main ()
 {
-    sqn::Sequence<Dna5> genome (readFasta ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta"));
-    sqn::Sequence<Dna5> t7tag = "atggctagcatgactggtggacagcaaatgggt";
+    std::string sequence = readFasta ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta");
+    sqn::Sequence<Dna5> genome (sequence), t7tag = "atggctagcatgactggtggacagcaaatgggt";
+    
     sqn::FuzzyQuery<Dna5Sequence> analysis = { genome, t7tag };
     
     analysis.initializeScoreMatrix (sqn::continuityMatrix, 5);
     analysis.setItemParser (itemParse);
     
-    for (sqn::Match<Dna5Sequence>& m : analysis.search ())
+    for (auto match : analysis.search ())
     {
-        std::cout << m.needle () << std::endl;
-        std::cout << m.haystack () << std::endl;
-        std::cout << center (m.score (), m.haystack ().length ())
+        std::cout << match.needle () << std::endl;
+        std::cout << match.haystack () << std::endl;
+        std::cout << helper_center (match.score (), match.haystack ().length ())
             << std::endl << std::endl;
     }
     
