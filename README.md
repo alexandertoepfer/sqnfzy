@@ -29,10 +29,10 @@ query.initializeScoreMatrix (scores, /* Amount of matches */ 3);
 
 For execution of the query and collection of results it is generally recommended to wrap everything into a loop, as std::list<Match<Tp>>& **search** () will return a list of all approximate matches.
 ```c
-for (sqn::Match<Dna5Sequence>& m : query.search ())
+for (sqn::Match<Dna5Sequence>& match : query.search ())
 {
-  std::string needle = m.needle ();
-  std::string haystack = m.haystack ();
+  std::string needle = match.needle ();
+  std::string haystack = match.haystack ();
 }
 ```
 
@@ -43,7 +43,7 @@ The score of the match can be obtained as well, which is shown in the complete e
 
 Using the functionality provided by the library to find possible common plasmid features like T7 in adeno-associated virus sequences allowing for errors and gaps caused by mutations. Take a look at <code>example.cpp</code> for the complete code. Sequence used in this example [Addgene #107790-AAV9](https://www.addgene.org/browse/sequence/204876/)
 ```c
-#include "SqnFzy.hpp"
+#include <sqnmanip/sqn/fzy.hpp>
   
 std::string
 itemParse (sqn::Item<Dna5Sequence>& item)
@@ -56,12 +56,12 @@ main ()
 {
   sqn::Sequence<Dna5> genome (readFasta ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta"));
   sqn::Sequence<Dna5> t7tag = "atggctagcatgactggtggacagcaaatgggt";
-  
   sqn::FuzzyQuery<Dna5Sequence> analysis = { genome, t7tag };
+  
   analysis.initializeScoreMatrix (sqn::continuityMatrix, 3);
   analysis.setItemParser (itemParse);
   
-  for (sqn::Match<Dna5Sequence>& m : analysis.search ())
+  for (sqn::Match<Dna5Sequence>& match : analysis.search ())
   {
     ...
   }
@@ -71,7 +71,7 @@ main ()
 
 Using the functionality provided by the library to auto correct text based on a dictionary of known words, currently not officially supported but another interesting use case for this algorithm.
 ```c
-#include "SqnFzy.hpp"
+#include <sqnmanip/sqn/fzy.hpp>
 
 int
 main ()
@@ -82,7 +82,7 @@ main ()
   sqn::FuzzyQuery<sqn::Sequence<char>> autocorrect = { words, word };
   autocorrect.initializeScoreMatrix (sqn::standardMatrix, 1);
   
-  for (sqn::Match<sqn::Sequence<char>>& m : autocorrect.search ())
+  for (sqn::Match<sqn::Sequence<char>>& match : autocorrect.search ())
   {
     ...
   }
