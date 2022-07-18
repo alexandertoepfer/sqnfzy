@@ -4,7 +4,7 @@
 
 # sqnfzy - Fuzzy Analysis of DNA Sequences
 
-![GitHub branch checks state](https://img.shields.io/github/checks-status/alexandertoepfer/sqnfzy/main?style=plastic) ![GitHub](https://img.shields.io/github/license/alexandertoepfer/sqnfzy?style=plastic)
+![GitHub](https://img.shields.io/github/license/alexandertoepfer/sqnfzy?style=flat)
 
 Inspired by [University of Alberta, Paul Stothard's Work](https://www.bioinformatics.org/sms2/index.html) and [Seqan3](https://github.com/seqan/seqan3) a small bioinformatics library written in C++ to approximately find parts of DNA sequences that can be easily mutated into a useful restriction site.
 
