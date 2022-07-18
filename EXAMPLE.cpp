@@ -73,7 +73,7 @@ helper_center (std::string str, int width)
 int
 main ()
 {
-    std::string sequence = readFasta ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta");
+    std::string sequence = readFasta ("data/AAV-CamKII-GCaMP6s-WPRE-SV40.fasta");
     sqn::Sequence<Dna5> genome (sequence), t7tag = "atggctagcatgactggtggacagcaaatgggt";
     
     sqn::FuzzyQuery<Dna5Sequence> analysis = { genome, t7tag };
