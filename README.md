@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="sqnfzy-logo.png" width="350">
-</p>
-
 # sqnfzy - Fuzzy Analysis of DNA Sequences
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fee733701e2943a19d93515d0104c2ef)](https://www.codacy.com/gh/alexandertoepfer/sqnfzy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alexandertoepfer/sqnfzy&amp;utm_campaign=Badge_Grade) ![GitHub](https://img.shields.io/github/license/alexandertoepfer/sqnfzy?style=flat)
