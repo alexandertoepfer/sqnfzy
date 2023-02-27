@@ -13,6 +13,19 @@
 #define SQN_FZY_HPP
 
 /*
+ * Sequence fuzzy searching 
+ * 
+ *  -. .-.   .-. .-.   .-. .-.   .
+ *    \   \ /   \   \ /   \   \ /
+ *   / \   \   / \   \   / \   \
+ *  ~   `-~ `-`   `-~ `-`   `-~ `-
+ * This technique is important because DNA sequences can vary
+ * due to mutations, insertions, and deletions, which can
+ * make it challenging to identify exact matches,
+ * useful in applications such as genome annotation.
+ */
+
+/*
  * MIT License
  * 
  * Copyright (c) 2022 Alexander Töpfer alexander_toepfer@gmx.de
