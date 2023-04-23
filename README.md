@@ -16,21 +16,20 @@ sqn::Sequence<Dna5> enzymeEagI = "CGGCCG";
 
 Initialization of the fuzzy query with genome (haystack) and enzyme (needle) according to their DNA or RNA sequence type.
 ```c
-sqn::FuzzyQuery<Dna5Sequence> query = { randGenome, enzymeEagI };
+sqn::FuzzyQuery<Dna5Sequence> query = {randGenome, enzymeEagI};
 ```
 
 Configuration of the values used to calculate scores for sequence parts can be done by setting a score matrix that dictates rewards and penalties.
 ```c
-sqn::ScoreMatrix scores = { /* Match */ 1, /* Mismatch */ -1, /* Gap */ 2 };
-query.initializeScoreMatrix (scores, /* Amount of matches */ 3);
+sqn::ScoreMatrix scores = {/*match*/1, /*mismatch*/-1, /*gap*/2 };
+query.initializeScoreMatrix(scores, /*amount of matches*/3);
 ```
 
 For execution of the query and collection of results it is generally recommended to wrap everything into a loop, as std::list<Match<Tp>>& **search** () will return a list of all approximate matches.
 ```c
-for (sqn::Match<Dna5Sequence>& match : query.search ())
-{
-  std::string needle = match.needle ();
-  std::string haystack = match.haystack ();
+for(sqn::Match<Dna5Sequence>& match : query.search()) {
+  std::string needle = match.needle();
+  std::string haystack = match.haystack();
 }
 ```
 
@@ -43,24 +42,19 @@ Using the functionality provided by the library to find possible common plasmid 
 ```c
 #include <sqnmanip/sqn/fzy.hpp>
   
-std::string
-itemParse (sqn::Item<Dna5Sequence>& item)
-{
+std::string itemParse (sqn::Item<Dna5Sequence>& item) {
   ...
 }
 
-int
-main ()
-{
-  sqn::Sequence<Dna5> genome (readFasta ("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta"));
+int main() {
+  sqn::Sequence<Dna5> genome(readFasta("AAV-CamKII-GCaMP6s-WPRE-SV40.fasta"));
   sqn::Sequence<Dna5> t7tag = "atggctagcatgactggtggacagcaaatgggt";
-  sqn::FuzzyQuery<Dna5Sequence> analysis = { genome, t7tag };
+  sqn::FuzzyQuery<Dna5Sequence> analysis = {genome, t7tag};
   
-  analysis.initializeScoreMatrix (sqn::continuityMatrix, 3);
-  analysis.setItemParser (itemParse);
+  analysis.initializeScoreMatrix(sqn::continuityMatrix, 3);
+  analysis.setItemParser(itemParse);
   
-  for (sqn::Match<Dna5Sequence>& match : analysis.search ())
-  {
+  for(sqn::Match<Dna5Sequence>& match : analysis.search()) {
     ...
   }
   return 0;
@@ -71,17 +65,14 @@ Using the functionality provided by the library to auto correct text based on a 
 ```c
 #include <sqnmanip/sqn/fzy.hpp>
 
-int
-main ()
-{
+int main () {
   sqn::Sequence<char> words = "student,summer,school,system,sample";
   sqn::Sequence<char> word = "stwdnt";
   
-  sqn::FuzzyQuery<sqn::Sequence<char>> autocorrect = { words, word };
-  autocorrect.initializeScoreMatrix (sqn::standardMatrix, 1);
+  sqn::FuzzyQuery<sqn::Sequence<char>> autocorrect = {words, word};
+  autocorrect.initializeScoreMatrix(sqn::standardMatrix, 1);
   
-  for (sqn::Match<sqn::Sequence<char>>& match : autocorrect.search ())
-  {
+  for (sqn::Match<sqn::Sequence<char>>& match : autocorrect.search()) {
     ...
   }
   return 0;
