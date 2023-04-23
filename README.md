@@ -65,7 +65,7 @@ Using the functionality provided by the library to auto correct text based on a 
 ```c
 #include <sqnmanip/sqn/fzy.hpp>
 
-int main () {
+int main() {
   sqn::Sequence<char> words = "student,summer,school,system,sample";
   sqn::Sequence<char> word = "stwdnt";
   
